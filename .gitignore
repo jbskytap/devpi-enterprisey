@@ -7,5 +7,11 @@ debianized-devpi/debian/debhelper-build-stamp
 debianized-devpi/debian/.debhelper/
 devpi_*.changes
 devpi_*.deb
+devpi-*.ddeb
 devpi_*.upload
+devpi_*.dsc
+devpi_*.diff.gz
+devpi_*.tar.gz
+devpi_*.build
+devpi_*.buildinfo
 wiki/
