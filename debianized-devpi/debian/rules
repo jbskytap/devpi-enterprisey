@@ -19,7 +19,7 @@ PREINSTALL=--preinstall "setuptools>=17.1" --preinstall "wheel" \
 # --preinstall 'requests[security]' # for Python before 2.7.9, e.g. on Ubuntu Trusty
 
 # Version of "devpi" meta package
-DEVPI_SERVER_VERSION=4.7.1
+DEVPI_SERVER_VERSION=4.9.0
 DEVPI_SERVER_PYPI="https://pypi.org/"
 DEVPI_URL=$(shell curl -sL $(DEVPI_SERVER_PYPI)simple/devpi-server/ \
     | grep devpi-server-$(DEVPI_SERVER_VERSION).tar.gz | cut -f2 -d'"' | cut -f1 -d\# | sed -re 's~^[./]+~~')
@@ -29,7 +29,7 @@ DEVPI_URL=$(shell curl -sL $(DEVPI_SERVER_PYPI)simple/devpi-server/ \
 ##DEVPI_URL="https://devpi.net/hpk/dev/+f/852/a16d5a944fd5a/devpi-2.0.2.tar.gz"
 
 # Frozen versions of "devpi" requirements
-DEVPI_FREEZE="devpi-client==4.1.0 devpi-common==3.3.1 devpi-web==3.4.1 requests==2.19.1"
+DEVPI_FREEZE="devpi==2.2.0 devpi-client==4.4.0 devpi-common==3.3.1 devpi-server==4.7.1 devpi-web==3.4.1"
 
 # Add plugin packages, as a space- or comma-separated list
 DEVPI_PLUGINS="devpi-findlinks==2.0.0"
