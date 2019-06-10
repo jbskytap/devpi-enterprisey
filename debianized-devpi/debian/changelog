@@ -1,3 +1,9 @@
+devpi (4.9.0-1ubuntu2) xenial; urgency=medium
+
+  * add rfc5424-logging-handler==1.4.3
+
+ -- John Brooker <jbrooker@skytap.com>  Mon, 10 Jun 2019 08:09:03 -0700
+
 devpi (4.9.0-1ubuntu1) xenial; urgency=medium
 
   * devpi-ldap==1.2.2

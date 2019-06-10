@@ -13,6 +13,7 @@
 
 export DH_VIRTUALENV_INSTALL_ROOT=/opt/venvs
 
+
 # Packages to install before the main project
 PREINSTALL=--preinstall "setuptools>=17.1" --preinstall "wheel" \
     --preinstall pytest --preinstall webtest
@@ -29,7 +30,7 @@ DEVPI_URL=$(shell curl -sL $(DEVPI_SERVER_PYPI)simple/devpi-server/ \
 ##DEVPI_URL="https://devpi.net/hpk/dev/+f/852/a16d5a944fd5a/devpi-2.0.2.tar.gz"
 
 # Frozen versions of "devpi" requirements
-DEVPI_FREEZE="devpi==2.2.0 devpi-client==4.4.0 devpi-common==3.3.1 devpi-server==4.7.1 devpi-web==3.4.1 devpi-ldap==1.2.2"
+DEVPI_FREEZE="devpi==2.2.0 devpi-client==4.4.0 devpi-common==3.3.1 devpi-server==4.7.1 devpi-web==3.4.1 devpi-ldap==1.2.2 rfc5424-logging-handler==1.4.3"
 
 # Add plugin packages, as a space- or comma-separated list
 DEVPI_PLUGINS="devpi-findlinks==2.0.0"
