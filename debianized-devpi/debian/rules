@@ -29,12 +29,6 @@ DEVPI_URL=$(shell curl -sL $(DEVPI_SERVER_PYPI)simple/devpi-server/ \
 ##PYPI_URL="--pypi-url=https://devpi.net/hpk/dev"
 ##DEVPI_URL="https://devpi.net/hpk/dev/+f/852/a16d5a944fd5a/devpi-2.0.2.tar.gz"
 
-# Frozen versions of "devpi" requirements
-DEVPI_FREEZE="devpi==2.2.0 devpi-client==4.4.0 devpi-common==3.3.1 devpi-server==4.7.1 devpi-web==3.4.1 devpi-ldap==1.2.2 rfc5424-logging-handler==1.4.3"
-
-# Add plugin packages, as a space- or comma-separated list
-DEVPI_PLUGINS="devpi-findlinks==2.0.0"
-
 PACKAGE=$(shell dh_listpackages)
 VERSION=$(shell parsechangelog | grep ^Version: | sed -re 's/[^0-9]+([^-]+).*/\1/')
 DH_VENV_ARGS=--setuptools --upgrade-pip --python /usr/bin/python3 $(PYPI_URL) $(PREINSTALL) #-v
@@ -51,7 +45,8 @@ build-arch:
 	cd debian && curl -sLOkS $(DEVPI_URL)
 	mkdir -p debian/sdist
 	tar -xz -C debian/sdist --strip-components=1 --exclude '*.egg-info' -f debian/*.tar.gz
-	echo $(DEVPI_FREEZE) $(DEVPI_PLUGINS) | tr ' ,' '\n\n' >>debian/sdist/requirements.txt
+	pwd
+	cp requirements.txt debian/sdist/requirements.txt
 	dh $@ --with python-virtualenv --sourcedir debian/sdist
 
 %:
