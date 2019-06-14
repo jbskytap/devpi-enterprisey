@@ -1,3 +1,9 @@
+devpi (4.9.0-1ubuntu3) xenial; urgency=medium
+
+  * Add pip and pwhash 
+
+ -- John Brooker <jbrooker@jng4lb1.skytap-dev.net>  Fri, 14 Jun 2019 08:57:28 -0700
+
 devpi (4.9.0-1ubuntu2) xenial; urgency=medium
 
   * add rfc5424-logging-handler==1.4.3
